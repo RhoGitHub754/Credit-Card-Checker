@@ -47,5 +47,23 @@ let totalSum = reArr.reduce((a, b) => {
   return a + b;
 }, 0)
 //return true or false if total sum is divisible by 10
-return totalSum % 10 === 0 ? true : false;
+return totalSum % 10 === 0 ? 'valid' : 'invalid';
 }
+
+const findInvalidCards = bArr => {
+  //create invalid, an empty array
+  const invalid = [];
+  //iterate through the batch array
+  for (let i = 0; i < bArr.length; i++) {
+    //if the ith element (array) in the batch array is invalid
+    if (validateCred(bArr[i]) === 'invalid') {
+      //push that element into the invalid array
+      invalid.push(bArr[i]);
+    }
+  }
+  
+  console.log(invalid);
+}
+
+
+findInvalidCards(batch);
